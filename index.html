@@ -72,7 +72,7 @@
 			  return Math.floor(Math.random() * (max - min + 1)) + min;
 			}
 
-			var shakeEvent = new Shake({threshold: 10,timeout: 100});
+			var shakeEvent = new Shake({threshold: 6,timeout: 100});
 			shakeEvent.start();
 			window.addEventListener('shake', function(){
 				var element = document.getElementById("box");
