@@ -87,11 +87,7 @@
 
 			    element.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
 
-					$.ajax({
-    				type: "POST",
-    				url: webhookurl,
-    				data: data
-  				});
+					fire();
 			}, false);
 
 			//stop listening
@@ -100,10 +96,19 @@
 			}
 
 			if(!("ondevicemotion" in window)){alert("Not Supported");}
+
+			function fire(){
+				$.ajax({
+					type: "POST",
+					url: webhookurl,
+					data: data
+				});
+			}
 		</script>
 	</head>
 	<body>
 		<div id="box"></div>
+		<button id="fire" onclick="fire()">fire</button>
 		<script type="text/javascript">
 			var element = document.getElementById("box");
 			var r = getRandomInt(0, 255);
