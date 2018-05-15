@@ -67,12 +67,6 @@
 			return vars;
 		}
 
-		webhookurl = para["webhookurl"];
-		var data = {
-				from: para["id"]
-		};
-
-
 			function getRandomInt(min, max) {
 			  return Math.floor(Math.random() * (max - min + 1)) + min;
 			}
@@ -97,6 +91,11 @@
 
 			if(!("ondevicemotion" in window)){alert("Not Supported");}
 
+			getUrlVars();
+			webhookurl = para["webhookurl"];
+			var data = {
+					from: para["id"]
+			};
 			function fire(){
 				$.ajax({
 					type: "POST",
